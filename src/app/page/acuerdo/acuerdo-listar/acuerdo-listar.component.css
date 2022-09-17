@@ -1,0 +1,22 @@
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+th{
+    text-align: center;
+    background-color: #e91e63;
+    color: #ffffff;
+    text-align: left;
+}
+nav{
+    display: flex;
+    gap: 15px;
+}

@@ -1,0 +1,53 @@
+<div>
+  <nav>
+      <a routerLink="/agricultores">Agricultores</a>
+      <a routerLink="/mayoristas">Mayoristas</a>
+      <a routerLink="/acuerdos">Acuerdos</a>
+  </nav>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="ID">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Descuento">
+      <th mat-header-cell *matHeaderCellDef> Descuento</th>
+      <td mat-cell *matCellDef="let element"> {{element.descuento}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Fecha de inicio">
+      <th mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Fecha final">
+      <th mat-header-cell *matHeaderCellDef> Fecha final </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Agricultor ID">
+      <th mat-header-cell *matHeaderCellDef> Agricultor ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.agricultor.id}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Mayorista ID">
+      <th mat-header-cell *matHeaderCellDef> Mayorista ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.mayorista.id}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
