@@ -1,3 +1,4 @@
+import { PublicacionCreaeditaComponent } from './page/publicacion/publicacion-creaedita/publicacion-creaedita.component';
 import { agricultor } from 'src/app/model/agricultor';
 import { DetalleordenComponent } from './page/detalleorden/detalleorden.component';
 import { AgricultorComponent } from './page/agricultor/agricultor.component';
@@ -58,6 +59,7 @@ const routes: Routes = [{
 },
 {
   path: 'promociones', component: PromocionComponent, children:[
+    {path:'nuevo',component:PublicacionCreaeditaComponent}
 
   ]
 },
