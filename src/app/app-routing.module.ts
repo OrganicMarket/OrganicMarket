@@ -59,12 +59,12 @@ const routes: Routes = [{
 },
 {
   path: 'promociones', component: PromocionComponent, children:[
-    {path:'nuevo',component:PublicacionCreaeditaComponent}
 
   ]
 },
 {
   path: 'publicaciones', component: PublicacionComponent, children:[
+    {path:'nuevo',component:PublicacionCreaeditaComponent}
 
   ]
  },

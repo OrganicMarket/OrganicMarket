@@ -20,6 +20,13 @@
             <li><a routerLink="/publicaciones">Publicaciones</a></li>
             <li><a routerLink="/detalleorden">Detalle Orden</a></li>
 
+            <div class="example-button-container">
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+                routerLink="/publicaciones/nuevo">
+                <mat-icon>plus_one</mat-icon>
+              </button>
+            </div>
+
           </ul>
         </nav>
 
@@ -33,7 +40,7 @@
     <!-- Position Column -->
     <ng-container matColumnDef="ID PUBLICACION">
       <th mat-header-cell *matHeaderCellDef> ID PUBLICACION </th>
-      <td mat-cell *matCellDef="let element"> {{element.id_publicacion}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
   
     <!-- Name Column -->
