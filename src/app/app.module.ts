@@ -39,6 +39,7 @@ import { MatButtonModule } from '@angular/material/button';
 import{MatIconModule} from'@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AgricultorCreaeditaComponent } from './page/agricultor/agricultor-creaedita/agricultor-creaedita.component';
+import { PublicacionCreaeditaComponent } from './page/publicacion/publicacion-creaedita/publicacion-creaedita.component';
 
 
 
@@ -73,6 +74,7 @@ import { AgricultorCreaeditaComponent } from './page/agricultor/agricultor-creae
 
     PersonaCrearpersonaComponent,
           AgricultorCreaeditaComponent,
+          PublicacionCreaeditaComponent,
 
 
   ],
