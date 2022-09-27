@@ -1,28 +1,52 @@
+import { detalleorden } from './../model/detalleorden';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { detalleorden } from '../model/detalleorden';
+import { EMPTY, Subject } from 'rxjs';
 import { Injectable } from "@angular/core";
 
 
 @Injectable({
-    providedIn: 'root'
-  })
-  
-export class DetalleordenService{
-    url:string="http://localhost:5000/detalleorden"
-    private listaCambio=new Subject<detalleorden[]>()
-    constructor(private http:HttpClient) { }
+  providedIn: 'root'
+})
 
-    listar(){
-        return this.http.get<detalleorden[]>(this.url);
+export class DetalleordenService {
+  url: string = "http://localhost:5000/detalleorden"
+  private listaCambio = new Subject<detalleorden[]>()
+  private confirmaEliminacion = new Subject<Boolean>()
+  constructor(private http: HttpClient) { }
+
+  listar() {
+    return this.http.get<detalleorden[]>(this.url);
+  }
+  insertar(detalleorden: detalleorden) {
+    return this.http.post(this.url, detalleorden);
+  }
+  setLista(listaNueva: detalleorden[]) {
+    this.listaCambio.next(listaNueva);
+  }
+  getLista() {
+    return this.listaCambio.asObservable();
+  }
+  modificar(detalleorden: detalleorden) {
+    return this.http.put(this.url + "/" + detalleorden.id, detalleorden);
+  }
+  listarId(id: number) {
+    return this.http.get<detalleorden>(`${this.url}/${id}`);
+  }
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
+  }
+  buscar(texto: string) {
+    if (texto.length != 0) {
+      return this.http.post<detalleorden[]>(`${this.url}/buscar`, texto.toLowerCase(), {
+      });
     }
-    insertar(propietario: detalleorden) {
-        return this.http.post(this.url, propietario);
-      }
-      setLista(listaNueva: detalleorden[]) {
-        this.listaCambio.next(listaNueva);
-      }
-      getLista() {
-        return this.listaCambio.asObservable();
-      }
+    return EMPTY;
+  }
+
 }

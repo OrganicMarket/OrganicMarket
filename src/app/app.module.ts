@@ -39,6 +39,9 @@ import { MatButtonModule } from '@angular/material/button';
 import{MatIconModule} from'@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita/detalle-creaedita.component';
+import { DetalleordenDialogoComponent } from './page/detalleorden/detalleorden-listar/detalleorden-dialogo/detalleorden-dialogo.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DetalleordenBuscarComponent } from './page/detalleorden/detalleorden-buscar/detalleorden-buscar.component';
 
 
 
@@ -72,7 +75,9 @@ import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita
   
 
     PersonaCrearpersonaComponent,
-          DetalleCreaeditaComponent
+          DetalleCreaeditaComponent,
+          DetalleordenDialogoComponent,
+          DetalleordenBuscarComponent
 
 
 
@@ -90,7 +95,8 @@ import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita
     MatButtonModule,
     FormsModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

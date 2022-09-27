@@ -1,7 +1,8 @@
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DetalleordenService } from './../../../service/detalleorden.service';
-import { Router } from '@angular/router';
 import { detalleorden } from './../../../model/detalleorden';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-detalle-creaedita',
@@ -9,24 +10,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalle-creaedita.component.css']
 })
 export class DetalleCreaeditaComponent implements OnInit {
-  detalleorden:detalleorden=new detalleorden();
-  mensaje: string="";
-  constructor(private DetalleordenService:DetalleordenService, private Router:Router) { }
+  detalleorden: detalleorden = new detalleorden();
+  mensaje: string = "";
+  edicion: boolean = false;
+  id: number = 0;
+  constructor(private detalleordenService: DetalleordenService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((d: Params) => {
+      this.id = d['id'];
+      this.edicion = d['id'] != null;
+      this.init();
+    })
   }
 
-  aceptar():void{
+  aceptar(): void {
     if (this.detalleorden.nombre.length > 0) {
-
-      this.DetalleordenService.insertar(this.detalleorden).subscribe(d => {
-        this.DetalleordenService.listar().subscribe(d => {
-          this.DetalleordenService.setLista(d);
+      if (this.edicion) {
+        this.detalleordenService.modificar(this.detalleorden).subscribe(d => {
+          this.detalleordenService.listar().subscribe(d => {
+            this.detalleordenService.setLista(d);
+          })
         })
-      })
-      this.Router.navigate(['detalleorden']);
+      } else {
+        this.detalleordenService.insertar(this.detalleorden).subscribe(d => {
+          this.detalleordenService.listar().subscribe(d => {
+            this.detalleordenService.setLista(d);
+          })
+        })
+      }
+      this.router.navigate(['detalleorden']);
     } else {
       this.mensaje = "Complete los valores requeridos";
     }
   }
+
+  init() {
+    if (this.edicion) {
+      this.detalleordenService.listarId(this.id).subscribe(d => {
+        this.detalleorden = d;
+      })
+    }
+
+  }
+
+
+
+
 }

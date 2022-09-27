@@ -18,59 +18,60 @@ import { PersonaCrearpersonaComponent } from './page/persona/persona-crearperson
 
 
 const routes: Routes = [{
-  path: 'agricultor', component: AgricultorComponent, children:[
+  path: 'agricultor', component: AgricultorComponent, children: [
 
   ]
-},{
-  path:'orden',component:OrdenComponent,children:[
+}, {
+  path: 'orden', component: OrdenComponent, children: [
 
   ]
-},{
-  path:'productos',component:ProductoComponent,children:[
+}, {
+  path: 'productos', component: ProductoComponent, children: [
 
   ]
-},{
-  path:'tipos',component:TipoComponent,children:[
-    {path:'nuevo',component:TipoCreaeditaComponent}
+}, {
+  path: 'tipos', component: TipoComponent, children: [
+    { path: 'nuevo', component: TipoCreaeditaComponent }
 
-    
 
-  ]
-},{
-  path:'persona',component:PersonaComponent,children:[
 
   ]
-},{
-  path:'administrador',component:AdministradorComponent,children:[
+}, {
+  path: 'persona', component: PersonaComponent, children: [
 
   ]
-},{
-  path: 'mayoristas', component: MayoristaComponent, children:[
+}, {
+  path: 'administrador', component: AdministradorComponent, children: [
 
   ]
-},{
-  path: 'acuerdos', component: AcuerdoComponent, children:[
+}, {
+  path: 'mayoristas', component: MayoristaComponent, children: [
 
   ]
-},
-{
-  path: 'promociones', component: PromocionComponent, children:[
+}, {
+  path: 'acuerdos', component: AcuerdoComponent, children: [
 
   ]
 },
 {
-  path: 'publicaciones', component: PublicacionComponent, children:[
+  path: 'promociones', component: PromocionComponent, children: [
 
   ]
- },
+},
 {
-  path:'detalleorden',component:DetalleordenComponent,children:[
-    {path:'nuevo',component:DetalleCreaeditaComponent}
+  path: 'publicaciones', component: PublicacionComponent, children: [
+
+  ]
+},
+{
+  path: 'detalleorden', component: DetalleordenComponent, children: [
+    { path: 'nuevo', component: DetalleCreaeditaComponent },
+    { path: 'edicion/:id', component: DetalleCreaeditaComponent }
   ]
 
 },
 {
-  path:'persona-crearpersona',component:PersonaCrearpersonaComponent,children:[
+  path: 'persona-crearpersona', component: PersonaCrearpersonaComponent, children: [
 
   ]
 }
