@@ -1,3 +1,4 @@
+import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita/detalle-creaedita.component';
 import { DetalleordenComponent } from './page/detalleorden/detalleorden.component';
 import { AgricultorComponent } from './page/agricultor/agricultor.component';
 import { NgModule, Component } from '@angular/core';
@@ -64,7 +65,7 @@ const routes: Routes = [{
  },
 {
   path:'detalleorden',component:DetalleordenComponent,children:[
-
+    {path:'nuevo',component:DetalleCreaeditaComponent}
   ]
 
 },

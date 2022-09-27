@@ -15,7 +15,10 @@ export class DetalleordenListarComponent implements OnInit {
 
   ngOnInit(): void {
     this.Ds.listar().subscribe(d => {this.dataSource = new MatTableDataSource(d);
-    })  }
+    })
+    this.Ds.getLista().subscribe(d=>{this.dataSource=new MatTableDataSource(d);})
+  
+  }
 
 }
 

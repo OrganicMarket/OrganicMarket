@@ -369,28 +369,20 @@ module.exports = function () {
 
       detalleorden:[
         {
-          dorden:{
-            id_orden:1,
-          },
-          producto:{
-            id_producto:1,
-          }
+          id: 1,
+          Nombre: "Tuberculos"
         },
         {
-          dorden:{
-            id_orden:2,
-          },
-          producto:{
-            id_producto:2,
-          }
+          id: 2,
+          Nombre: "Semillas"
         },
         {
-          dorden:{
-            id_orden:3,
-          },
-          producto:{
-            id_producto:3,
-          }
+          id: 3,
+          Nombre: "Raíces"
+        },
+        {
+          id: 4,
+          Nombre: "Tallos"
         }
     ]
 

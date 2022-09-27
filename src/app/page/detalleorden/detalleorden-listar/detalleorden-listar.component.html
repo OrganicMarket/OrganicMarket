@@ -19,6 +19,13 @@
                     <li><a routerLink="/promociones">Promociones</a></li>
                     <li><a routerLink="/publicaciones">Publicaciones</a></li>
                     <li><a routerLink="/detalleorden">Detalle Orden</a></li>
+                    <div class="example-button-container">
+
+                        <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon"
+                          routerLink="/tipos/nuevo">
+                          <mat-icon>plus_one</mat-icon>
+                        </button>
+                      </div>
                 </ul>
             </nav>
 
@@ -31,16 +38,16 @@
               The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column -->
-        <ng-container matColumnDef="dorden">
+        <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> ID ORDEN</th>
-            <td mat-cell *matCellDef="let element"> {{element.dorden.id_orden}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 
         <!-- Name Column -->
 
-        <ng-container matColumnDef="producto">
-            <th mat-header-cell *matHeaderCellDef> ID Producto</th>
-            <td mat-cell *matCellDef="let element"> {{element.producto.id_producto}} </td>
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre Producto</th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
         </ng-container>
 
          <tr mat-header-row *matHeaderRowDef="displayedColumns">
