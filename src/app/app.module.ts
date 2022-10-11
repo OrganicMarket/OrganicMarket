@@ -59,6 +59,8 @@ import { ProdutoCreaeditaComponent } from './page/producto/produto-creaedita/pro
 import { DetalleordenDialogoComponent } from './page/detalleorden/detalleorden-listar/detalleorden-dialogo/detalleorden-dialogo.component';
 import { DetalleordenBuscarComponent } from './page/detalleorden/detalleorden-buscar/detalleorden-buscar.component';
 import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita/detalle-creaedita.component';
+import { LoginComponent } from './page/login/login.component';
+import { LoginEnterComponent } from './page/login/login-enter/login-enter.component';
 
 
 
@@ -108,7 +110,9 @@ import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita
     ProdutoCreaeditaComponent,
     DetalleordenDialogoComponent,
     DetalleordenBuscarComponent,
-    DetalleCreaeditaComponent
+    DetalleCreaeditaComponent,
+    LoginComponent,
+    LoginEnterComponent
   ],
   imports: [
     BrowserModule,

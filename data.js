@@ -24,6 +24,8 @@ module.exports = function () {
         telefono: 900132763,
         correo: "gonlach22192@gmail.com"
       },
+
+      
       {
         id: 4,
         nombre: "Samuel Martinez",
@@ -75,6 +77,17 @@ module.exports = function () {
         correo: "cinthinuñ01999@gmail.com"
       }
     ],
+
+    login: [
+      {
+        username: "Jhomax",
+        password: "1234567",
+      },
+     
+    ],
+
+  
+
     administrador: [
       {
         id_administrador: 1,

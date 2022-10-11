@@ -1,3 +1,4 @@
+import { LoginEnterComponent } from './page/login/login-enter/login-enter.component';
 import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita/detalle-creaedita.component';
 import { agricultor } from 'src/app/model/agricultor';
 import { DetalleordenComponent } from './page/detalleorden/detalleorden.component';
@@ -19,6 +20,7 @@ import { AgricultorCreaeditaComponent } from './page/agricultor/agricultor-creae
 import { PublicacionCreaeditaComponent } from './page/publicacion/publicacion-creaedita/publicacion-creaedita.component';
 import { MayoristaCreaeditaComponent } from './page/mayorista/mayorista-creaedita/mayorista-creaedita.component';
 import { ProdutoCreaeditaComponent } from './page/producto/produto-creaedita/produto-creaedita.component';
+import { LoginComponent } from './page/login/login.component';
 
 const routes: Routes = [{
   path: 'agricultor', component: AgricultorComponent, children: [
@@ -43,7 +45,16 @@ const routes: Routes = [{
 
 
   ]
-}, {
+}, 
+
+{
+  path: 'login', component: LoginEnterComponent, children: [
+
+
+  ]
+}, 
+
+{
   path: 'persona', component: PersonaComponent, children: [
     { path: 'nuevo', component: PersonaCrearpersonaComponent },
     { path: 'edicion/:id', component: PersonaCrearpersonaComponent }
