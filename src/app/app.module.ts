@@ -62,6 +62,18 @@ import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita
 import { LoginComponent } from './page/login/login.component';
 import { LoginEnterComponent } from './page/login/login-enter/login-enter.component';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CustomDateAdapter } from './custom-adapter';
+import { PromocionBuscarComponent } from './page/promocion/promocion-buscar/promocion-buscar.component';
+import { PromocionCreaeditaComponent } from './page/promocion/promocion-creaedita/promocion-creaedita.component';
+import { PromocionDialogoComponent } from './page/promocion/promocion-listar/promocion-dialogo/promocion-dialogo.component';
+
+
 
 
 
@@ -111,8 +123,14 @@ import { LoginEnterComponent } from './page/login/login-enter/login-enter.compon
     DetalleordenDialogoComponent,
     DetalleordenBuscarComponent,
     DetalleCreaeditaComponent,
+
     LoginComponent,
-    LoginEnterComponent
+    LoginEnterComponent,
+
+    PromocionBuscarComponent,
+    PromocionCreaeditaComponent,
+    PromocionDialogoComponent
+
   ],
   imports: [
     BrowserModule,
@@ -125,9 +143,18 @@ import { LoginEnterComponent } from './page/login/login-enter/login-enter.compon
     FormsModule,
     MatIconModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatToolbarModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  { provide: DateAdapter, useClass: CustomDateAdapter }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,3 @@
-import { LoginEnterComponent } from './page/login/login-enter/login-enter.component';
 import { DetalleCreaeditaComponent } from './page/detalleorden/detalle-creaedita/detalle-creaedita.component';
 import { agricultor } from 'src/app/model/agricultor';
 import { DetalleordenComponent } from './page/detalleorden/detalleorden.component';
@@ -75,7 +74,8 @@ const routes: Routes = [{
 },
 {
   path: 'promociones', component: PromocionComponent, children: [
-
+    { path: 'nuevo', component: PromocionCreaeditaComponent }
+    , { path: 'edicion/:id', component: PromocionCreaeditaComponent }
   ]
 },
 {
